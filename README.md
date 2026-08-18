@@ -20,7 +20,7 @@
 
 ## 构建
 
-本机没有全局 Gradle 时，可使用任意兼容 Gradle 8.x 的安装运行：
+本机没有全局 Gradle 时，请使用 Gradle 8.14 或更高版本（本项目已用 Gradle 9.5 验证）：
 
 ```powershell
 $env:JAVA_HOME = 'C:\Program Files\Zulu\zulu-21'

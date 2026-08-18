@@ -1,0 +1,13 @@
+.gradle/
+.gradle-dist/
+build/
+run/
+logs/
+*.log
+*.jar
+!.gitignore
+zip-inspect-*/
+*.zip
+.idea/
+*.iml
+out/

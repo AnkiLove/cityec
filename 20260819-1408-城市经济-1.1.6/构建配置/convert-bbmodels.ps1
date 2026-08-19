@@ -153,10 +153,10 @@ function Convert-BbModel {
 }
 
 $downloads = 'C:\Users\Administrator\Downloads'
-Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_off.bbmodel') -TargetName 'auto_teller_machine_bb_off'
-Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_on.bbmodel') -TargetName 'auto_teller_machine_bb_on'
-Convert-BbModel -Source (Join-Path $downloads 'cash_register_off.bbmodel') -TargetName 'cash_register_bb_off' -YScale 1.0
-Convert-BbModel -Source (Join-Path $downloads 'cash_register_on.bbmodel') -TargetName 'cash_register_bb_on' -YScale 1.0
+Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_off.bbmodel') -TargetName 'auto_teller_machine_bb_off' -TransparentBottom
+Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_on.bbmodel') -TargetName 'auto_teller_machine_bb_on' -TransparentBottom
+Convert-BbModel -Source (Join-Path $downloads 'cash_register_off.bbmodel') -TargetName 'cash_register_bb_off' -YScale 1.0 -TransparentBottom
+Convert-BbModel -Source (Join-Path $downloads 'cash_register_on.bbmodel') -TargetName 'cash_register_bb_on' -YScale 1.0 -TransparentBottom
 
 Add-Type -AssemblyName System.Drawing
 function New-OpaqueBottomTexture {

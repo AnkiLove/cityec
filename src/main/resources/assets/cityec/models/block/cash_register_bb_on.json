@@ -3,8 +3,7 @@
   "ambientocclusion": true,
   "textures": {
     "base": "cityec:block/cash_register_bb_on",
-    "particle": "cityec:block/cash_register_bb_on",
-    "bottom": "cityec:block/cash_register_bb_on_bottom"
+    "particle": "cityec:block/cash_register_bb_on"
   },
   "elements": [
     {
@@ -526,29 +525,6 @@
             5.5
           ],
           "texture": "#base"
-        }
-      }
-    },
-    {
-      "from": [
-        0.0,
-        0.01,
-        0.0
-      ],
-      "to": [
-        16.0,
-        0.02,
-        16.0
-      ],
-      "faces": {
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#bottom"
         }
       }
     }

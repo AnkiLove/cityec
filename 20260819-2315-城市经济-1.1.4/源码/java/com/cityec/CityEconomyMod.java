@@ -29,14 +29,13 @@ public final class CityEconomyMod implements ModInitializer {
         ServerPlayNetworking.registerGlobalReceiver(CONFIG_PACKET, (server, player, handler, buf, responseSender) -> {
             BlockPos pos = buf.readBlockPos();
             boolean atm = buf.readBoolean();
-            boolean enabled = buf.readBoolean();
             int value = Math.max(1, Math.min(1_000_000, buf.readInt()));
             server.execute(() -> {
                 if (player.squaredDistanceTo(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5) > 64.0) return;
                 if (atm) {
-                    if (player.getWorld().getBlockEntity(pos) instanceof AtmBlockEntity entity) entity.applyConfig(enabled, value);
+                    if (player.getWorld().getBlockEntity(pos) instanceof AtmBlockEntity entity) entity.applyConfig(entity.enabled, value);
                 } else if (player.getWorld().getBlockEntity(pos) instanceof CashRegisterBlockEntity entity) {
-                    entity.applyConfig(enabled, value);
+                    entity.applyConfig(entity.enabled, value);
                 }
             });
         });

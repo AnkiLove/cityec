@@ -52,7 +52,6 @@ public class ConfigScreen extends HandledScreen<ConfigScreenHandler> {
         PacketByteBuf buf = PacketByteBufs.create();
         buf.writeBlockPos(handler.targetPos());
         buf.writeBoolean(handler.isAtm());
-        buf.writeBoolean(handler.isEnabled());
         buf.writeInt(value);
         ClientPlayNetworking.send(com.cityec.CityEconomyMod.CONFIG_PACKET, buf);
         close();
@@ -65,7 +64,7 @@ public class ConfigScreen extends HandledScreen<ConfigScreenHandler> {
         context.fill(left, top, left + backgroundWidth, top + 28, 0xFF334155);
         context.drawText(textRenderer, title, left + 12, top + 9, 0xFFFFFFFF, false);
         context.drawText(textRenderer, Text.translatable("screen.cityec.status", handler.isEnabled()), left + 20, top + 36, 0xFF0F172A, false);
-        context.drawText(textRenderer, Text.translatable(handler.isAtm() ? "screen.cityec.withdraw_amount" : "screen.cityec.price", handler.value()), left + 20, top + 94, 0xFF0F172A, false);
+        context.drawText(textRenderer, Text.translatable(handler.isAtm() ? "screen.cityec.withdraw_amount" : "screen.cityec.price"), left + 20, top + 94, 0xFF0F172A, false);
         context.drawText(textRenderer, Text.translatable("screen.cityec.unit"), left + 230, top + 94, 0xFF0F172A, false);
     }
 

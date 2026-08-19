@@ -148,15 +148,14 @@ function Convert-BbModel {
         elements = $elements
     }
     $modelPath = Join-Path $ProjectRoot "src/main/resources/assets/cityec/models/block/$TargetName.json"
-    $json = ($minecraftModel | ConvertTo-Json -Depth 16) -replace "`r?`n", "`n"
-    [IO.File]::WriteAllText($modelPath, "$json`n", [Text.UTF8Encoding]::new($false))
+    $minecraftModel | ConvertTo-Json -Depth 16 | Set-Content -LiteralPath $modelPath -Encoding utf8
 }
 
 $downloads = 'C:\Users\Administrator\Downloads'
-Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_off.bbmodel') -TargetName 'auto_teller_machine_bb_off' -TransparentBottom
-Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_on.bbmodel') -TargetName 'auto_teller_machine_bb_on' -TransparentBottom
-Convert-BbModel -Source (Join-Path $downloads 'cash_register_off.bbmodel') -TargetName 'cash_register_bb_off' -YScale 1.0 -TransparentBottom
-Convert-BbModel -Source (Join-Path $downloads 'cash_register_on.bbmodel') -TargetName 'cash_register_bb_on' -YScale 1.0 -TransparentBottom
+Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_off.bbmodel') -TargetName 'auto_teller_machine_bb_off' -TransparentBottom -BottomFill -BottomFromX 0 -BottomToX 16 -BottomFromZ 0 -BottomToZ 16
+Convert-BbModel -Source (Join-Path $downloads 'auto_teller_machine_on.bbmodel') -TargetName 'auto_teller_machine_bb_on' -TransparentBottom -BottomFill -BottomFromX 0 -BottomToX 16 -BottomFromZ 0 -BottomToZ 16
+Convert-BbModel -Source (Join-Path $downloads 'cash_register_off.bbmodel') -TargetName 'cash_register_bb_off' -YScale 1.0 -TransparentBottom -BottomFill -BottomFromX 0 -BottomToX 16 -BottomFromZ 0 -BottomToZ 16
+Convert-BbModel -Source (Join-Path $downloads 'cash_register_on.bbmodel') -TargetName 'cash_register_bb_on' -YScale 1.0 -TransparentBottom -BottomFill -BottomFromX 0 -BottomToX 16 -BottomFromZ 0 -BottomToZ 16
 
 Add-Type -AssemblyName System.Drawing
 function New-OpaqueBottomTexture {

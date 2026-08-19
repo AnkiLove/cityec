@@ -27,7 +27,7 @@ $env:JAVA_HOME = 'C:\Program Files\Zulu\zulu-21'
 gradle build
 ```
 
-构建结果位于 `build/libs/cityec-1.1.5.jar`。将该文件与 Fabric API 一并放入服务端和客户端的 `mods` 目录。
+构建结果位于 `build/libs/cityec-1.1.4.jar`。将该文件与 Fabric API 一并放入服务端和客户端的 `mods` 目录。
 
 ## 基本使用
 

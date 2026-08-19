@@ -23,9 +23,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.item.BlockItem;
 
 public final class CityEconomyBlocks {
-    // Both supplied machine models leave space at their base, so the support block must keep rendering its top face.
-    public static final Block ATM = register("auto_teller_machine", new AtmBlock(Block.Settings.create().strength(3.5f).sounds(BlockSoundGroup.METAL).requiresTool().nonOpaque()));
-    public static final Block CASH_REGISTER = register("cash_register", new CashRegisterBlock(Block.Settings.create().strength(2.5f).sounds(BlockSoundGroup.METAL).requiresTool().nonOpaque()));
+    public static final Block ATM = register("auto_teller_machine", new AtmBlock(Block.Settings.create().strength(3.5f).sounds(BlockSoundGroup.METAL).requiresTool()));
+    public static final Block CASH_REGISTER = register("cash_register", new CashRegisterBlock(Block.Settings.create().strength(2.5f).sounds(BlockSoundGroup.METAL).requiresTool()));
 
     private static Block register(String id, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(CityEconomyMod.MOD_ID, id), block);

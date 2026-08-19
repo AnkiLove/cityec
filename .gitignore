@@ -8,6 +8,7 @@ logs/
 !.gitignore
 zip-inspect-*/
 *.zip
+20??????-????-城市经济-*/
 .idea/
 *.iml
 out/
